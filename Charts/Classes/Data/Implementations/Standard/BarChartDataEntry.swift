@@ -18,6 +18,9 @@ public class BarChartDataEntry: ChartDataEntry
     /// the values the stacked barchart holds
     private var _values: [Double]?
     
+    //  enable rounded corners on the BarChart
+    public var rounded: Bool = false
+    
     /// the sum of all negative values this entry (if stacked) contains
     private var _negativeSum: Double = 0.0
     
