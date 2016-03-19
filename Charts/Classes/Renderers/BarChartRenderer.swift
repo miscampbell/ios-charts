@@ -137,7 +137,8 @@ public class BarChartRenderer: ChartDataRendererBase
                 CGContextSetFillColorWithColor(context, dataSet.colorAt(j).CGColor)
 //                CGContextFillRect(context, barRect)
                 if e.rounded {
-                    let rounded = UIBezierPath(roundedRect: barRect, cornerRadius: barRect.size.width/2)
+                    let rounded = UIBezierPath(roundedRect: barRect, byRoundingCorners: [UIRectCorner.TopLeft, UIRectCorner.TopRight],
+                        cornerRadii: CGSizeMake(1.0, 1.0))
                     rounded.fill()
                 } else {
                     CGContextFillRect(context, barRect)
@@ -532,7 +533,8 @@ public class BarChartRenderer: ChartDataRendererBase
                 prepareBarHighlight(x: x, y1: y1, y2: y2, barspacehalf: barspaceHalf, trans: trans, rect: &barRect)
                 
                 if e.rounded {
-                    let rounded = UIBezierPath(roundedRect: barRect, cornerRadius: barRect.size.width / 2)
+                    let rounded = UIBezierPath(roundedRect: barRect, byRoundingCorners: [UIRectCorner.TopLeft, UIRectCorner.TopRight],
+                        cornerRadii: CGSizeMake(1.0, 1.0))
                     rounded.fill()
                 }
                 
