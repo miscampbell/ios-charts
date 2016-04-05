@@ -135,10 +135,10 @@ public class BarChartRenderer: ChartDataRendererBase
                 
                 // Set the color for the currently drawn value. If the index is out of bounds, reuse colors.
                 CGContextSetFillColorWithColor(context, dataSet.colorAt(j).CGColor)
-//                CGContextFillRect(context, barRect)
+                
                 if e.rounded {
                     let rounded = UIBezierPath(roundedRect: barRect, byRoundingCorners: [UIRectCorner.TopLeft, UIRectCorner.TopRight],
-                        cornerRadii: CGSizeMake(1.0, 1.0))
+                        cornerRadii: CGSizeMake(barRect.width / 2, barRect.width / 2))
                     rounded.fill()
                 } else {
                     CGContextFillRect(context, barRect)
@@ -534,7 +534,7 @@ public class BarChartRenderer: ChartDataRendererBase
                 
                 if e.rounded {
                     let rounded = UIBezierPath(roundedRect: barRect, byRoundingCorners: [UIRectCorner.TopLeft, UIRectCorner.TopRight],
-                        cornerRadii: CGSizeMake(1.0, 1.0))
+                        cornerRadii: CGSizeMake(barRect.width / 2, barRect.width / 2))
                     rounded.fill()
                 }
                 
